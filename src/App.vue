@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import axios from "axios";
+import {onMounted, ref} from "vue";
+import ImagePost from "./ImagePost.vue";
 
 interface Post {
   id: number
@@ -47,9 +49,6 @@ interface Post {
   last_noted_at: number
   last_commented_at: number
 }
-
-import {onMounted, ref} from "vue";
-import ImagePost from "@/ImagePost.vue";
 
 const posts = ref<Post[]>([]);
 const tags = ref<string>('');
