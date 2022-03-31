@@ -97,6 +97,16 @@ const onSubmit = async () => {
       <button @click="nextPage">Next</button>
     </div>
   </div>
-  <ImagePost v-for="post in posts" :key="post.id" :file_url="post.file_url" :tags="post.tags"
-             :width="post.sample_width" :height="post.sample_height" :image_url="post.jpeg_url"/>
+  <div class="image-container">
+    <ImagePost v-for="post in posts" :key="post.id" :file_url="post.file_url" :tags="post.tags"
+               :width="post.sample_width" :height="post.sample_height" :image_url="post.jpeg_url"/>
+  </div>
 </template>
+
+<style>
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+</style>

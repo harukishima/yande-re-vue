@@ -6,14 +6,25 @@ interface ImagePostProps {
   height: number;
   image_url: string;
 }
+
 const props = defineProps<ImagePostProps>()
 </script>
 
 <template>
-<div style="display: flex; justify-content: center">
-  <a :href="props.file_url" target="_blank">
-    <img :alt="props.tags" :src="props.image_url" :height="props.height" :width="props.width" loading="lazy" />
-  </a>
-</div>
+  <div>
+    <a :href="props.file_url" target="_blank">
+      <img :alt="props.tags" :src="props.image_url" loading="lazy"/>
+    </a>
+  </div>
 </template>
 
+<style>
+img {
+  max-width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+</style>
